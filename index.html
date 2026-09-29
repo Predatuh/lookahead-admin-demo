@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Look Ahead Admin Demo (local only)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="banner">LOCAL DEMO ONLY — not connected to Replit, Blattner systems, or any live project data. Changes stay in this browser.</div>
+  <div class="app">
+    <aside>
+      <div class="brand">BLATTNER <span>DEMO</span></div>
+      <div class="nav-label">Site team</div>
+      <nav class="nav">
+        <div class="nav-label">Tools <span class="badge-uc">under construction</span></div>
+        <button class="nav-item" data-view="home">Home</button>
+        <button class="nav-item" data-view="reports">Load Reports</button>
+        <button class="nav-item" data-view="wwtr">WWTR Review</button>
+        <button class="nav-item" data-view="util">Utilization</button>
+        <div class="nav-label">Look Ahead</div>
+        <button class="nav-item active sub" data-view="lookahead">3-Week Look Ahead</button>
+        <button class="nav-item sub" data-view="weekend">Weekend Work Requests <span class="badge-uc">UC</span></button>
+        <button class="nav-item sub" data-view="rotation">Rotation Calendar</button>
+        <div class="nav-label">Schedule <span class="badge-uc">under construction</span></div>
+        <div class="nav-label">Quality</div>
+        <button class="nav-item" data-view="admin">Admin console</button>
+      </nav>
+    </aside>
+    <main>
+      <div class="top">
+        <button class="btn menu-btn" id="menuBtn" type="button">Menu</button>
+        <h1 id="pageTitle">3-Week Look Ahead</h1>
+        <span class="dates" id="dateRange">Sep 28 – Oct 18, 2026</span>
+        <div class="spacer"></div>
+        <span class="pill">Project: <strong id="projectName">Hackberry Creek</strong></span>
+        <span class="pill">Owner: <strong id="ownerName">Jenny Holwell</strong></span>
+        <button class="btn" id="todayBtn">Today</button>
+      </div>
+      <div class="admin-bar">
+        <span class="role">ADMIN</span>
+        <label><input type="checkbox" id="editMode" /> Edit mode</label>
+        <button class="btn" id="addActivity">+ Activity</button>
+        <button class="btn" id="addSection">+ Section</button>
+        <button class="btn" id="usersBtn">Users & roles</button>
+        <button class="btn" id="settingsBtn">Project settings</button>
+        <button class="btn" id="exportBtn">Export JSON</button>
+        <button class="btn ok" id="saveBtn">Save locally</button>
+        <button class="btn danger" id="resetBtn">Reset demo data</button>
+        <span class="spacer"></span>
+        <span id="status" class="muted">Unsaved demo session</span>
+      </div>
+      <div class="layout">
+        <div class="grid-wrap" id="viewLookahead"></div>
+        <section class="drawer" id="drawer"></section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+:root {
+  --bg: #071422;
+  --bg2: #0c1d30;
+  --panel: #0e2438;
+  --line: #1c3a55;
+  --text: #e8f1f8;
+  --muted: #8aa0b5;
+  --accent: #3d8fd4;
+  --civil: #1a4f8a;
+  --elec: #3b2a78;
+  --today: #8a4a1a;
+  --today-bg: #c4b8a4;
+  --weekend: repeating-linear-gradient(-45deg, #0a1a2a 0 8px, #0e2236 8px 16px);
+  --ok: #3ecf8e;
+  --warn: #e7b549;
+  --danger: #e25b5b;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 13px/1.35 "Segoe UI", system-ui, sans-serif; }
+.menu-btn { display: none; }
+.banner { background: #5a1d1d; color: #ffd9d9; text-align: center; padding: 6px 12px; font-size: 12px; }
+.app { display: grid; grid-template-columns: 232px 1fr; height: calc(100% - 28px); }
+aside { background: #081525; border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 12px 0; }
+.brand { padding: 4px 16px 14px; font-weight: 800; letter-spacing: .12em; font-size: 18px; }
+.brand span { color: #7eb6ea; }
+.nav-label { color: var(--muted); font-size: 11px; padding: 8px 16px 4px; text-transform: uppercase; letter-spacing: .08em; }
+.nav button.nav-item { display: block; width: 100%; text-align: left; background: none; border: 0; color: var(--text); padding: 8px 16px; cursor: pointer; }
+.nav button.nav-item:hover { background: #12263a; }
+.nav .active { background: #16324c; border-left: 3px solid var(--accent); padding-left: 13px; }
+.nav .sub { padding-left: 28px; color: #c5d6e6; font-size: 12.5px; }
+.badge-uc { color: #c9a227; font-size: 10px; margin-left: 6px; }
+main { display: flex; flex-direction: column; min-width: 0; }
+.top { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--bg2); }
+.top h1 { margin: 0; font-size: 18px; font-weight: 650; }
+.dates { color: var(--muted); }
+.spacer { flex: 1; }
+.pill { background: #16324c; border: 1px solid var(--line); border-radius: 16px; padding: 5px 10px; color: #d5e6f4; }
+.btn { background: #1a3d5c; color: var(--text); border: 1px solid #2b5a82; border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+.btn.primary { background: #2b6ea3; border-color: #4b8fc4; }
+.btn.danger { background: #6a2a2a; border-color: #a04a4a; }
+.btn.ok { background: #1e5a40; border-color: #3ecf8e; }
+.admin-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 16px; background: #102033; border-bottom: 1px solid var(--line); }
+.role { color: var(--ok); font-weight: 700; }
+.grid-wrap { overflow: auto; flex: 1; }
+table { border-collapse: collapse; min-width: 1400px; width: 100%; }
+th, td { border: 1px solid #163047; padding: 6px 8px; vertical-align: middle; }
+thead th { position: sticky; top: 0; background: #0d2134; z-index: 2; font-weight: 600; }
+.act { position: sticky; left: 0; background: #0d2134; min-width: 180px; z-index: 1; text-align: left; }
+thead .act { z-index: 3; }
+.section td { font-weight: 700; letter-spacing: .04em; }
+.civil { background: var(--civil); }
+.elec { background: var(--elec); }
+.today { background: var(--today); color: #fff; }
+.today-col { background: #d7c7ae; color: #1b1b1b; }
+.wknd { background-image: var(--weekend); color: #6f8496; }
+td[contenteditable="true"] { outline: 1px dashed #3d8fd4; background: #102c44; }
+.drawer { width: 360px; background: #0b1c2d; border-left: 1px solid var(--line); padding: 14px; overflow: auto; display: none; }
+.drawer.open { display: block; }
+.field { margin-bottom: 10px; }
+.field label { display: block; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+input, select, textarea { width: 100%; background: #0a1826; color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 7px 8px; }
+.user-row { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.toast { position: fixed; right: 16px; bottom: 16px; background: #16324c; border: 1px solid var(--ok); padding: 10px 14px; border-radius: 8px; display: none; }
+.layout { display: flex; flex: 1; min-height: 0; }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; height: auto; min-height: calc(100% - 48px); }
+  aside { display: none; position: fixed; z-index: 20; inset: 48px auto 0 0; width: 80%; max-width: 280px; }
+  aside.open { display: flex; }
+  .menu-btn { display: inline-block; }
+  .top, .admin-bar { flex-wrap: wrap; }
+  .drawer { width: 100%; position: fixed; inset: auto 0 0 0; max-height: 55%; z-index: 15; }
+  .btn { min-height: 36px; }
+}
